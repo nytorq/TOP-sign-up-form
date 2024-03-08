@@ -1,33 +1,170 @@
-body {
-    display: flex;
-    flex-direction: row;
-}
-.hero {
-    width: 50%;;
+/*
+// CUSTOM PROPERTIES (AKA CSS VARIABLES)
+*/
+
+:root {
+    --green: #596D48;
+    --gray: #E5E7EB;
 }
 
-aside {
+/*
+// BASE ELEMENT STYLES
+*/
+
+html {
+    height: 100vh;
+    font-family: Arial;
+}
+
+body {
+    margin: 0;
+}
+
+/*
+// MAIN CONTENT AREA
+*/
+
+.main {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.leftSection {
     background-image: url("caleb-smith-unsplash.jpg");
-    width: 40%;
-    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rightSection {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(237, 237, 237);
+}
+
+.rightSection > h2 {
+    margin-left: 3rem;
+}
+
+/*
+// HERO SECTION
+*/
+
+.hero {
+    width: 50%;;
 }
 
 .logo {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
+    flex: 2;
 }
 
 .logoText {
-    font-size: 6rem;
+    font-size: 3rem;
     color: white;
 }
 
-body {
-    margin: 0;
-    height: 100%;
+.leftSection p {
+    align-self: flex-end;
+    width: 100%;
+    text-align: center;
+    color: white;
 }
 
-html {
-    height: 100vh;
+/*
+// FORMS
+*/
+
+.fields {
+    background-color: white;
+    box-shadow: 0px 5px 20px 8px rgba(0, 0, 0, 10%);
+    width: 100%;
+    padding: 0.875rem;
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 0 2rem 0;
+    padding-left: 3rem;
+}
+
+fieldset {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    margin-bottom: 1.5rem;
+}
+
+.field:nth-child(odd) {
+    margin-right: 3rem;
+}
+
+form button, form p {
+    margin-left: 3rem;
+}
+
+/*
+    Form elements
+*/ 
+label {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgb(84, 84, 84);
+    letter-spacing: 1px;
+}
+
+input {
+    border: 1px solid var(--gray);
+    height: 2rem;
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.75rem;
+}
+
+input:focus {
+    border: 1px solid blue;
+}
+
+input.error {
+    border: 1px solid red;
+}
+
+#errorMessage {
+    color: red;
+    margin-left: 0;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+button {
+    background-color: var(--green);
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--green);
+    font-weight: 600;
 }
